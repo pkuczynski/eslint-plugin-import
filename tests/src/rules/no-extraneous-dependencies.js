@@ -322,6 +322,34 @@ ruleTester.run('no-extraneous-dependencies', rule, {
         message: "'chai' should be listed in the project's dependencies. Run 'npm i -S chai' to add it",
       }],
     }),
+    test({
+      code: 'const { v5 } = require("uuid")',
+      options: [{devDependencies: false}],
+      errors: [{
+        message: '\'uuid\' should be listed in the project\'s dependencies, not devDependencies.',
+      }],
+    }),
+    test({
+      code: 'import { v5 } from "uuid"',
+      options: [{devDependencies: false}],
+      errors: [{
+        message: '\'uuid\' should be listed in the project\'s dependencies, not devDependencies.',
+      }],
+    }),
+    test({
+      code: 'const v5 = require("uuid/v5")',
+      options: [{devDependencies: false}],
+      errors: [{
+        message: '\'uuid\' should be listed in the project\'s dependencies, not devDependencies.',
+      }],
+    }),
+    test({
+      code: 'import v5 from "uuid/v5"',
+      options: [{devDependencies: false}],
+      errors: [{
+        message: '\'uuid\' should be listed in the project\'s dependencies, not devDependencies.',
+      }],
+    }),
   ],
 });
 
