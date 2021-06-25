@@ -10,6 +10,7 @@ export const rules = {
   'no-restricted-paths': require('./rules/no-restricted-paths'),
   'no-internal-modules': require('./rules/no-internal-modules'),
   'group-exports': require('./rules/group-exports'),
+  'no-relative-packages': require('./rules/no-relative-packages'),
   'no-relative-parent-imports': require('./rules/no-relative-parent-imports'),
 
   'no-self-import': require('./rules/no-self-import'),
@@ -39,6 +40,7 @@ export const rules = {
   'no-unassigned-import': require('./rules/no-unassigned-import'),
   'no-useless-path-segments': require('./rules/no-useless-path-segments'),
   'dynamic-import-chunkname': require('./rules/dynamic-import-chunkname'),
+  'no-import-module-exports': require('./rules/no-import-module-exports'),
 
   // export
   'exports-last': require('./rules/exports-last'),
